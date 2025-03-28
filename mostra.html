@@ -14,26 +14,22 @@
       height: 100vh;
       font-family: sans-serif;
     }
-    #container {
+    #output {
       text-align: center;
       font-size: 2rem;
       color: #333;
+      white-space: pre-line;
+      max-width: 90%;
     }
   </style>
 </head>
 <body>
-  <div id="container">
-    <div id="riga1">Caricamento...</div>
-    <div id="riga2"></div>
-  </div>
+  <div id="output">Caricamento...</div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const data = params.get("testo") || "";
-    const ora = params.get("ora") || "";
-
-    document.getElementById("riga1").textContent = "data: " + decodeURIComponent(data.replace(/\+/g, " "));
-    document.getElementById("riga2").textContent = "ora: " + decodeURIComponent(ora.replace(/\+/g, " "));
+    const text = params.get("d") || "";
+    document.getElementById("output").textContent = decodeURIComponent(text.replace(/\+/g, " "));
   </script>
 </body>
 </html>

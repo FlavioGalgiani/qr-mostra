@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Messaggio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+    #output {
+      font-size: 2rem;
+      color: #333;
+      text-align: center;
+      max-width: 90%;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <div id="output">Caricamento...</div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const text = params.get("testo") || "Nessun testo fornito";
+    document.getElementById("output").textContent = decodeURIComponent(text.replace(/\+/g, " "));
+  </script>
+</body>
+</html>

@@ -29,11 +29,11 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const riga1 = params.get("testo") || "";
-    const riga2 = params.get("ora") || "";
+    const data = params.get("testo") || "";
+    const ora = params.get("ora") || "";
 
-    document.getElementById("riga1").textContent = "data: " + decodeURIComponent(riga1.replace(/\+/g, " "));
-    document.getElementById("riga2").textContent = "ora: " + decodeURIComponent(riga2.replace(/\+/g, " "));
+    document.getElementById("riga1").textContent = "data: " + decodeURIComponent(data.replace(/\+/g, " "));
+    document.getElementById("riga2").textContent = "ora: " + decodeURIComponent(ora.replace(/\+/g, " "));
   </script>
 </body>
 </html>
